@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Gym Tracker · Juan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <div class="hdr">
+    <div class="logo">JUAN · <b>GYM TRACKER</b></div>
+    <div class="week-tag" id="weekTag"></div>
+  </div>
+
+  <div class="nav">
+    <button class="nav-btn active" onclick="showPage('train',this)">Entrenar</button>
+    <button class="nav-btn" onclick="showPage('progress',this)">Progresión</button>
+    <button class="nav-btn" onclick="showPage('history',this)">Historial</button>
+  </div>
+
+  <!-- TRAIN -->
+  <div class="page active" id="page-train">
+    <div class="day-grid" id="dayGrid"></div>
+    <div id="sessionWrap"></div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="page" id="page-progress">
+    <select class="sel-ex" id="exSelect" onchange="renderChart()"></select>
+    <div id="chartArea"></div>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="page" id="page-history">
+    <div id="histList"></div>
+  </div>
+</div>
+
+<div class="save-bar" id="saveBar">
+  <button class="save-btn" onclick="saveSession()">Guardar sesión →</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
